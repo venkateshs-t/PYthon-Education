@@ -1,0 +1,222 @@
+
+a=10
+b=20.3
+c="Vamshi"
+d="Venkat"
+f=[1,2,3,4]
+g=('Tommy','Jerry')
+e={'Venkat':'student','vamsi':'Prof','siva':'CEO'}
+
+print('value of a:',a)
+
+print('added value:',a+b)
+
+print('value of b:',b)
+
+print('float added value:',a-b)
+
+print('mul & quo:',a*2,a%2)
+
+print('string of c is:',c)
+
+i=c+d
+print('a+d is',i.split())
+
+print('slicing of string:',i[2],i[-1],i[6:],3*i,len(i))
+
+print('total list:',f)
+
+print('added list:',f+[1,3,5])
+
+print('list indexing:',f[3],f[0:2])
+
+del(f[2:])
+print('deleted list:',f)
+
+h=[111,'siva',121]
+h.append('Venkat')
+print('appended list:',h)
+
+x=[2,3]
+f.insert(1,x)
+print('cocante list:',f)
+
+thislist = ["apple", "banana", "cherry"]
+thislist.append("orange")
+print(thislist)
+
+thislist = ["apple", "banana", "cherry"]
+thistuple = ("kiwi", "orange")
+thislist.extend(thistuple)
+print('List+Tupple:',thislist)
+
+
+thislist = ["apple", "banana", "cherry"]
+thislist.remove("banana")
+print("remove item from list:",thislist)
+
+thislist = ["apple", "banana", "cherry"]
+crazy=thislist.pop(1)
+print('pop from list:',thislist)
+print('poped item:',crazy)
+
+thislist = ["apple", "banana", "cherry"]
+del thislist[0]
+print('del of item from list:',thislist)
+
+thislist = ["apple", "banana", "cherry"]
+thislist.clear()
+print('clearing the list:',thislist)
+
+thislist = ["apple", "banana", "cherry"]
+[print('iteration through the list:',x) for x in thislist]
+
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort()
+print('sorting the list in ascending order:',thislist)
+
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print('sorting the list in  descending:',thislist)
+
+thislist = ["apple", "banana", "cherry"]
+mylist = thislist.copy()
+print('copying the whole list:',mylist)
+
+######################################################
+
+print("tuple:",g)
+
+y=list(g)
+y.remove('Tommy')
+print('removed tupple:',y)
+
+########################################################
+
+print('dict:',e)
+
+dic = {'venkat':'student','siva':'employe','vamsi':'lecturer'}
+print('total dic:',dic)
+print('gets 1 item value:',dic['venkat'])
+dic['venkat']='CEO'
+print('changed value of venkat:',dic)
+
+print('getting keys from dic:',dic.keys())
+print('getting whole values:',dic.values())
+print('getting all items:',dic.items())
+
+del(dic['vamsi'])
+print('deleting particular item:',dic)
+
+dic['muneeb']='instructor'
+print('adding item:',dic)
+
+# print(dic.has_key('siva'))
+
+print('getting value of a particular item:',dic.get('muneeb'))
+
+dic.update({'muneeb':'guest'})
+print('updating the dic:',dic)
+#########################################################
+
+x='hi'
+y='hi'
+
+print(x is y)
+
+x=[]
+y=[]
+print(x is y)
+
+a=[1,3,5]
+
+b=a; #copy by handle
+
+c=a[:] #shallow-copy
+
+b[0]=2
+c[0]=3
+print(a,b,c)
+
+################################################
+
+def func(a,b,*r):
+  if(a>b):
+    c=a*b
+    return(print("True with %s"%(r)))
+  else:
+    return(print("False",r))
+
+x=func(1,2,[3,5,6])
+print(x)
+
+
+def func(a,b,*r):
+  if(a>b):
+    c=a*b
+    return(print("True with %s"%(r)))
+  else:
+    return(print("False",r))
+
+x=func(1,2,('HyGoogle','Vigil'))
+print(x)
+
+'''
+#def func(a,b,*r,color:'Yellow'):
+  if(a>b):
+    c=a*b
+    return(print("True with %s"%(color)))
+  else:
+    return(print("False"))
+
+x=func(1,2,'blue')
+print(x)
+'''
+
+def function_with_default_arg(name="Jasmine",number=3):
+    print(name+"'s","number is",number);
+
+#Function Call :
+function_with_default_arg("Happy",10);
+
+
+#Function Definition :
+def function_with_default_arg(name="Jasmine",number=3):
+    print(name+"'s","number is",number);
+
+#Function Call :
+function_with_default_arg("Paul");
+
+
+def myfun(name,mem,*s):
+  for i in s:
+    return(print(i,"%s and %s"%(name,mem)))
+
+s=[1,2,3,4]
+myfun('yuzi','warner',s)
+
+
+def myfun(**s):
+  for i,j in s.items:
+    return(print('{}:{}'.format(i,j)))
+
+myfun(apy='hp',cost=50000)
+
+####################################################
+
+
+import re
+
+line = "This is Venkatesh and my work is to verify the SoC work level Ip's work the help oh UVM "
+sv = re.split("work",line)
+for i in sv:
+  print(sv)
+
+ss = re.search("Venkatesh",line)
+print(ss)
+
+sc=re.match("This",line)
+print(sc)
+
+sk=re.findall("work",line)
+print(sk)
